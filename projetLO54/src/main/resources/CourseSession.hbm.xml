@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="fr.utbm.javabeans.CourseSession" table="course_session">
+    <id name="id" type="int">
+        <column name="ID" />
+        <generator class="assigned" />
+    </id>
+    <property name="startDate" type="java.sql.Date">
+        <column name="START_DATE" />
+    </property>
+    <property name="endDate" type="java.sql.Date">
+        <column name="END_DATE" />
+    </property>
+    <many-to-one name="course" column="COURSE_CODE" class="fr.utbm.javabeans.Course" unique="true" lazy="false"/>
+    <many-to-one name="location" column="LOCATION_ID" class="fr.utbm.javabeans.Location" unique="true" lazy="false"/>
+  </class>
+</hibernate-mapping>

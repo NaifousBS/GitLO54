@@ -15,5 +15,6 @@
     <mapping resource="Client.hbm.xml"/>
     <mapping resource="Location.hbm.xml"/>
     <mapping resource="Course.hbm.xml"/>
+    <mapping resource="CourseSession.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

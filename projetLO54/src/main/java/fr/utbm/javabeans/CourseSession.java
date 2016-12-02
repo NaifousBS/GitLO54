@@ -22,11 +22,12 @@ public class CourseSession {
 	/** The end date. */
 	private Date endDate;
 	
-	/** The course code. */
+	/*
 	private int courseCode;
-	
-	/** The location id. */
-	private int locationId;
+	private int locationId;*/
+        
+        private Course course;
+        private Location location;
 	
 	/**
 	 * Instantiates a new course session.
@@ -40,16 +41,18 @@ public class CourseSession {
 	 * @param id the id
 	 * @param startDate the start date
 	 * @param endDate the end date
+         * @param course
 	 * @param courseCode the course code
 	 * @param locationId the location id
 	 */
-	public CourseSession(int id, Date startDate, Date endDate, int courseCode, int locationId) {
+	public CourseSession(int id, Date startDate, Date endDate, Course course/*, int courseCode, int locationId*/) {
 		super();
 		this.id = id;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.courseCode = courseCode;
-		this.locationId = locationId;
+                this.course=course;
+		/*this.courseCode = courseCode;
+		this.locationId = locationId;*/
 	}
 
 	/**
@@ -85,7 +88,7 @@ public class CourseSession {
 	 * @param startDate the startDate to set
 	 */
 	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
+            this.startDate = startDate;
 	}
 
 	/**
@@ -94,9 +97,9 @@ public class CourseSession {
 	 * @return the endDate
 	 */
 	public Date getEndDate() {
-		return endDate;
+            return endDate;
 	}
-
+        
 	/**
 	 * Sets the end date.
 	 *
@@ -106,41 +109,58 @@ public class CourseSession {
 		this.endDate = endDate;
 	}
 
+        public Course getCourse()
+        {
+            return course;
+        }
+        public void setCourse(Course course)
+        {
+            this.course= course;
+        }
+        
+        public Location getLocation()
+        {
+            return location;
+        }
+        public void setLocation(Location location)
+        {
+            this.location= location;
+        }
 	/**
 	 * Gets the course code.
 	 *
 	 * @return the courseCode
 	 */
-	public int getCourseCode() {
+	/*public int getCourseCode() {
 		return courseCode;
-	}
+	}*/
 
 	/**
 	 * Sets the course code.
 	 *
 	 * @param courseCode the courseCode to set
 	 */
-	public void setCourseCode(int courseCode) {
+	/*public void setCourseCode(int courseCode) {
 		this.courseCode = courseCode;
-	}
+	}*/
 
 	/**
 	 * Gets the location id.
 	 *
 	 * @return the locationId
 	 */
-	public int getLocationId() {
+	/*public int getLocationId() {
 		return locationId;
-	}
+	}*/
 
 	/**
 	 * Sets the location id.
 	 *
 	 * @param locationId the locationId to set
 	 */
-	public void setLocationId(int locationId) {
+	/*public void setLocationId(int locationId) {
 		this.locationId = locationId;
-	}
+	}*/
 	
 	
 	

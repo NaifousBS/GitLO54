@@ -16,8 +16,8 @@ public class DefaultCourseController {
         courseService.registerCourse(courseToRegister);
     }
     public List<Course> getCourses(){
-        CourseService locationService = new CourseService();
-        List<Course> listCourses= locationService.getCourses();
+        CourseService courseService = new CourseService();
+        List<Course> listCourses= courseService.getCourses();
         return listCourses;
     }
     public Course getCourse(String courseId){
