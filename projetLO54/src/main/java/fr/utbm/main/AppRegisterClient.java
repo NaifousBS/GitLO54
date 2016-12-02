@@ -18,6 +18,6 @@ public class AppRegisterClient {
      */
     public static void main(String[] args) {
         DefaultClientController DCC = new DefaultClientController();    
-        DCC.registerClient("John","Doe");
+        DCC.registerClient("John","Doe", "5, rue de Belfort", "11111111");
     }
 }
