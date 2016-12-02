@@ -10,7 +10,9 @@ public class DefaultLocationController {
 		
 	}
 	public List<Location> getLocations(){
-		return null;
+            LocationService locationService = new LocationService();
+            List<Location> listLocations= locationService.getLocations();
+            return null;
 	}
 	public Location getLocation(int locationId){
 		LocationService locationService = new LocationService();

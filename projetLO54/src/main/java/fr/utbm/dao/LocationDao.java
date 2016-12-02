@@ -31,12 +31,12 @@ public class LocationDao {
         return locationSelect;
 	}
 	public List<Location> getLocations(){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        Query query = session.createQuery("from Location l");
-        List<Location> list= query.list();
-        session.close();
-        
-        return list;
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("from Location l");
+            List<Location> list= query.list();
+            session.close();
+
+            return list;
 	}
 }
