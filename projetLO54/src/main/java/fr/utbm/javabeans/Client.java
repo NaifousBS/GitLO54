@@ -18,7 +18,7 @@ public class Client {
 	private String address;
 	
 	/** The phone. */
-	private int phone;
+	private String phone;
 	
 	/** The email. */
 	private String email;
@@ -43,7 +43,7 @@ public class Client {
 	 * @param email the email
 	 * @param courseSessionId the course session id
 	 */
-	public Client(int id, String lastname, String firstname, String address, int phone, String email,
+	public Client(int id, String lastname, String firstname, String address, String phone, String email,
 			int courseSessionId) {
 		super();
 		this.id = id;
@@ -114,14 +114,14 @@ public class Client {
 	/**
 	 * @return the phone
 	 */
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
 	/**
 	 * @param phone the phone to set
 	 */
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
