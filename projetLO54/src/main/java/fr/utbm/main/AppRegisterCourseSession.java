@@ -32,13 +32,13 @@ public class AppRegisterCourseSession {
         Course course=defCourseController.getCourse("C0001");
         
         DefaultLocationController defLocationController=new DefaultLocationController();
-        Location location=defLocationController.getLocation(1);
+        Location location=defLocationController.getLocation(2);
         Date startDate=null;
         Date endDate=null; 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            startDate = sdf.parse("02/12/2016");
-            endDate = sdf.parse("10/12/2016");
+            startDate = sdf.parse("11/12/2016");
+            endDate = sdf.parse("15/12/2016");
         } catch (ParseException ex) {
             Logger.getLogger(AppRegisterCourseSession.class.getName()).log(Level.SEVERE, null, ex);
         }
