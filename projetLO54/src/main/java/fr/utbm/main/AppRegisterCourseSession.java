@@ -29,7 +29,7 @@ public class AppRegisterCourseSession {
     public static void main(String[] args) {
         // TODO code application logic here
         DefaultCourseController defCourseController=new DefaultCourseController();
-        Course course=defCourseController.getCourse("C0001");
+        Course course=defCourseController.getCourse("C0002");
         
         DefaultLocationController defLocationController=new DefaultLocationController();
         Location location=defLocationController.getLocation(2);
@@ -37,8 +37,8 @@ public class AppRegisterCourseSession {
         Date endDate=null; 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            startDate = sdf.parse("11/12/2016");
-            endDate = sdf.parse("15/12/2016");
+            startDate = sdf.parse("06/01/2017");
+            endDate = sdf.parse("12/01/2017");
         } catch (ParseException ex) {
             Logger.getLogger(AppRegisterCourseSession.class.getName()).log(Level.SEVERE, null, ex);
         }

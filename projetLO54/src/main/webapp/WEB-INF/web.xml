@@ -12,6 +12,10 @@
         <servlet-name>CourseSessionsServlet</servlet-name>
         <servlet-class>fr.utbm.servlet.CourseSessionsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListCourseSessionsServlet</servlet-name>
+        <servlet-class>fr.utbm.servlet.ListCourseSessionsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>CourseSessionsServlet</servlet-name>
         <url-pattern>/courseSessions</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCourseSessionsServlet</servlet-name>
+        <url-pattern>/listCourseSessions</url-pattern>
     </servlet-mapping>
     <jsp-config>
         <jsp-property-group>

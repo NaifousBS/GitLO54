@@ -18,9 +18,19 @@ public class DefaultCourseSessionController {
             CourseSessionService courseSessionService = new CourseSessionService();
             courseSessionService.registerCourseSession(courseSessionToRegister);
 	}
-	public List<CourseSession> getCourseSessions(){
+	public List<CourseSession> getCourseSessions(String courseCode){
             CourseSessionService courseSessionService = new CourseSessionService();
-            List<CourseSession> listCourseSessions= courseSessionService.getCourseSessions();
+            List<CourseSession> listCourseSessions= courseSessionService.getCourseSessions(courseCode);
+            return listCourseSessions;
+	}
+        public List<CourseSession> getCourseSessionFiltre(String courseTitle,Date courseDate,String courseLocation){
+            CourseSessionService courseSessionService = new CourseSessionService();
+            List<CourseSession> listCourseSessions= courseSessionService.getCourseSessionFiltre(courseTitle,courseDate,courseLocation);
+            return listCourseSessions;
+	}
+        public List<CourseSession> getAllCourseSessions(){
+            CourseSessionService courseSessionService = new CourseSessionService();
+            List<CourseSession> listCourseSessions= courseSessionService.getAllCourseSessions();
             return listCourseSessions;
 	}
 	public CourseSession getCourseSession(int courseSessionId){

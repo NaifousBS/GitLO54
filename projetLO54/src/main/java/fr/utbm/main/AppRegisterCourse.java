@@ -19,7 +19,7 @@ public class AppRegisterCourse {
     public static void main(String[] args) {
         // TODO code application logic here
         /*DefaultCourseController defCourseController=new DefaultCourseController();
-        defCourseController.registerCourse("C0001","JEE");*/
+        defCourseController.registerCourse("C0002","C#.Net");*/
     }
     
 }

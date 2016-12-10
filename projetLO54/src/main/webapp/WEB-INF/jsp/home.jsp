@@ -15,7 +15,7 @@
         <h1>Page d'accueil</h1>
         <div>
             <a href="http://localhost:82/projetLO54/formations">Liste des formations disponibles</a><br/>
-            <a href="http://localhost:82/projetLO54/courseSessions">Liste des sessions disponibles</a>
+            <a href="http://localhost:82/projetLO54/listCourseSessions">Liste des sessions disponibles</a>
         </div>
     </body>
 </html>

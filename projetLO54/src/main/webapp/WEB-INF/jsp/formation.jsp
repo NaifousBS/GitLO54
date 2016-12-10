@@ -11,8 +11,14 @@
     </head>
     <body>
         <h1>Liste des formations</h1>
+        <ul>
         <c:forEach var="formation" items="${requestScope.listeFormations}">
-            <li><c:out value="${formation.title}"/></li>
+            <li>
+                <c:out value="${formation.title}"/>&nbsp;
+                <a href='http://localhost:82/projetLO54/courseSessions?courseCode=${formation.code}'>Liste des sessions</a>
+            </li>
+            
         </c:forEach>
+        </ul>
     </body>
 </html>
