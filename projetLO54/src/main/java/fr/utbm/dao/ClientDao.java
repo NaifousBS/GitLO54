@@ -21,6 +21,7 @@ public class ClientDao {
             System.out.println("Erreur lors de la création du client!");
         }
     }
+
     
     // Méthode qui récupère un client renseigné par son ID
     public Client getClient(int idClient){

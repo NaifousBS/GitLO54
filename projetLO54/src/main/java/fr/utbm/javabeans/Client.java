@@ -24,8 +24,8 @@ public class Client {
 	private String email;
 	
 	/** The course session id. */
-	private int courseSessionId;
-	
+	//private int courseSessionId;
+	private CourseSession courseSession;
 	/**
 	 * Instantiates a new client.
 	 */
@@ -41,10 +41,10 @@ public class Client {
 	 * @param address the address
 	 * @param phone the phone
 	 * @param email the email
-	 * @param courseSessionId the course session id
+	 * @param courseSession the course session id
 	 */
 	public Client(int id, String lastname, String firstname, String address, String phone, String email,
-			int courseSessionId) {
+			CourseSession courseSession) {
 		super();
 		this.id = id;
 		this.lastname = lastname;
@@ -52,7 +52,7 @@ public class Client {
 		this.address = address;
 		this.phone = phone;
 		this.email = email;
-		this.courseSessionId = courseSessionId;
+		this.courseSession = courseSession;
 	}
 
 	/**
@@ -142,15 +142,15 @@ public class Client {
 	/**
 	 * @return the courseSessionId
 	 */
-	public int getCourseSessionId() {
-		return courseSessionId;
+	public CourseSession getCourseSession() {
+		return courseSession;
 	}
 
 	/**
-	 * @param courseSessionId the courseSessionId to set
+	 * @param courseSession the courseSessionId to set
 	 */
-	public void setCourseSessionId(int courseSessionId) {
-		this.courseSessionId = courseSessionId;
+	public void setCourseSession(CourseSession courseSession) {
+		this.courseSession = courseSession;
 	}
 	
 	
