@@ -37,7 +37,9 @@
                 <c:out value="${courseSession.location.city}"/>&nbsp;
                 <c:out value="${courseSession.startDate}"/>&nbsp;
                 <c:out value="${courseSession.endDate}"/>&nbsp;
+                <a href="/projetLO54/listCourseSessions?courseSessionId=${courseSession.id}">Se préinscrire</a>
             </li>
+            
         </c:forEach>
         </ul>
     </body>
