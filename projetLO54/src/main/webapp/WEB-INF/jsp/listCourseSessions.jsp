@@ -11,7 +11,7 @@
     </head>
     <body>
         <h1>Liste des sessions</h1>
-        <form action="/projetLO54/listCourseSessions"
+        <form action="/projetLO54/listCourseSessions" method="POST">
             <table>
                 <tr>
                     <td><input id="filtreFormation" name="filtreFormation" type="text" placeholder="Formation" value="${filtreFormation}"/></td>
@@ -37,7 +37,7 @@
                 <c:out value="${courseSession.location.city}"/>&nbsp;
                 <c:out value="${courseSession.startDate}"/>&nbsp;
                 <c:out value="${courseSession.endDate}"/>&nbsp;
-                <a href="/projetLO54/listCourseSessions?courseSessionId=${courseSession.id}">Se préinscrire</a>
+                <a href="/projetLO54/listCourseSessions?mode=inscription&courseSessionId=${courseSession.id}">Se préinscrire</a>
             </li>
             
         </c:forEach>

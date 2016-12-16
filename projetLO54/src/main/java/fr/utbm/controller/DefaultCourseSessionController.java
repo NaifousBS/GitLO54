@@ -35,7 +35,7 @@ public class DefaultCourseSessionController {
 	}
 	public CourseSession getCourseSession(int courseSessionId){
             CourseSessionService courseSessionService = new CourseSessionService();
-            CourseSession courseSessionSelect= courseSessionService.getCourseSession(1);
+            CourseSession courseSessionSelect= courseSessionService.getCourseSession(courseSessionId);
             return courseSessionSelect;
 	}
 
