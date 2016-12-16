@@ -15,7 +15,7 @@
         <c:forEach var="formation" items="${requestScope.listeFormations}">
             <li>
                 <c:out value="${formation.title}"/>&nbsp;
-                <a href='http://localhost:82/projetLO54/courseSessions?courseCode=${formation.code}'>Liste des sessions</a>
+                <a href='/projetLO54/courseSessions?courseCode=${formation.code}'>Liste des sessions</a>
             </li>
             
         </c:forEach>

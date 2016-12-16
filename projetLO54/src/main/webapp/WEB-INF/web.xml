@@ -16,6 +16,10 @@
         <servlet-name>ListCourseSessionsServlet</servlet-name>
         <servlet-class>fr.utbm.servlet.ListCourseSessionsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SendMailServlet</servlet-name>
+        <servlet-class>fr.utbm.servlet.SendMailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -38,6 +42,10 @@
             <include-prelude>/WEB-INF/jsp/taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
+    <servlet-mapping>
+        <servlet-name>SendMailServlet</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
