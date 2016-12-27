@@ -5,22 +5,20 @@
  */
 package fr.utbm.servlet;
 
-import fr.utbm.controller.DefaultCourseSessionController;
-import fr.utbm.javabeans.CourseSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Souf
  */
-public class CourseSessionsServlet extends HttpServlet {
+public class ConnexionServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,14 +30,37 @@ public class CourseSessionsServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {  
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
-            List<CourseSession> listeCourseSessions = DCSC.getCourseSessions(request.getParameter("courseCode"));
-            request.setAttribute("listeCourseSessions", listeCourseSessions);
-            RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/courseSessions.jsp");
-            formationsRedirect.forward(request,response);
+            String nom=request.getParameter("inputNom");
+            String prenom=request.getParameter("inputPrenom");
+            String adresse=request.getParameter("inputAdresse");
+            String numTel=request.getParameter("inputNumTel");
+            String email=request.getParameter("inputEmail");
+            //Si tous les champs sont remplis
+            if(nom!= null && !nom.isEmpty()
+                    && prenom!=null  && !nom.isEmpty()
+                    && adresse!= null  && !nom.isEmpty()
+                    && numTel!=null  && !nom.isEmpty()
+                    && email!=null)
+            {
+                /* Création ou récupération de la session */
+                HttpSession session = request.getSession();
+                /* Mise en session */
+                session.setAttribute("nom", nom);
+                session.setAttribute("prenom", prenom);
+                session.setAttribute("adresse", adresse);
+                session.setAttribute("numTel", numTel);
+                session.setAttribute("email", email);
+                RequestDispatcher redirect = request.getRequestDispatcher("/listCourseSessions");
+                redirect.forward(request,response);  
+            }
+            else
+            {
+                RequestDispatcher homeRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+                homeRedirect.forward(request,response);  
+            }
         }
     }
 

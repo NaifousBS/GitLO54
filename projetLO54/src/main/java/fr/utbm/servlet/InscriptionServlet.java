@@ -5,22 +5,23 @@
  */
 package fr.utbm.servlet;
 
+import fr.utbm.controller.DefaultClientController;
 import fr.utbm.controller.DefaultCourseSessionController;
 import fr.utbm.javabeans.CourseSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Souf
  */
-public class CourseSessionsServlet extends HttpServlet {
+public class InscriptionServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,14 +33,10 @@ public class CourseSessionsServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {  
-        response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
-            List<CourseSession> listeCourseSessions = DCSC.getCourseSessions(request.getParameter("courseCode"));
-            request.setAttribute("listeCourseSessions", listeCourseSessions);
-            RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/courseSessions.jsp");
-            formationsRedirect.forward(request,response);
+            
+            
         }
     }
 
@@ -55,7 +52,22 @@ public class CourseSessionsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        // Récupération des infos sur le client
+            HttpSession session = request.getSession();
+            String nom=(String) session.getAttribute("nom");
+            String prenom=(String)session.getAttribute("prenom");
+            String adresse=(String)session.getAttribute("adresse");
+            String numTel=(String)session.getAttribute("numTel");
+            String email=(String)session.getAttribute("email");
+            int courseId=Integer.parseInt(request.getParameter("courseSessionId"));
+            
+            DefaultCourseSessionController defCourseSessionController=new DefaultCourseSessionController();
+            CourseSession courseSession=defCourseSessionController.getCourseSession(courseId);
+            DefaultClientController DCC = new DefaultClientController();    
+            DCC.registerClient(prenom,nom, adresse, numTel,email,courseSession);
+            request.setAttribute("mode", "");
+            RequestDispatcher redirect = request.getRequestDispatcher("/WEB-INF/jsp/validationInscription.jsp");
+            redirect.forward(request,response);  
     }
 
     /**
@@ -69,7 +81,8 @@ public class CourseSessionsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        RequestDispatcher redirect = request.getRequestDispatcher("/listCourseSessions");
+        redirect.forward(request,response); 
     }
 
     /**
