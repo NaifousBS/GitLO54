@@ -5,14 +5,6 @@
         <servlet-class>fr.utbm.servlet.HomeServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>fr.utbm.servlet.ConnexionServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>InscriptionServlet</servlet-name>
-        <servlet-class>fr.utbm.servlet.InscriptionServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>FormationsServlet</servlet-name>
         <servlet-class>fr.utbm.servlet.FormationsServlet</servlet-class>
     </servlet>
@@ -31,14 +23,6 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConnexionServlet</servlet-name>
-        <url-pattern>/connexion</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>InscriptionServlet</servlet-name>
-        <url-pattern>/inscription</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FormationsServlet</servlet-name>
