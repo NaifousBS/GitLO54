@@ -10,7 +10,6 @@ import fr.utbm.controller.DefaultLocationController;
 import fr.utbm.javabeans.CourseSession;
 import fr.utbm.javabeans.Location;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,7 +19,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -159,7 +157,7 @@ public class ListCourseSessionsServlet extends HttpServlet {
                 List<Location> listeLocations = DLC.getLocations();
                 request.setAttribute("listeLocations", listeLocations);
                 // Redirection vers la page jsp
-                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/listCourseSessions.jsp");
+                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
                 formationsRedirect.forward(request,response); 
     }
 

@@ -5,8 +5,16 @@
  */
 package fr.utbm.servlet;
 
+import fr.utbm.controller.DefaultCourseSessionController;
+import fr.utbm.controller.DefaultLocationController;
+import fr.utbm.javabeans.CourseSession;
+import fr.utbm.javabeans.Location;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +40,44 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            RequestDispatcher homeRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-            homeRedirect.forward(request,response);      
+            //Récupération des filtres
+                String filtreFormation=request.getParameter("filtreFormation");
+                String filtreDate=request.getParameter("filtreDate");
+                String filtreLieu=request.getParameter("filtreLieu");
+                //Vérification des filtres + conversion
+                if(filtreFormation==null || filtreFormation.equals("") )
+                    filtreFormation="";
+                // On resélectionne le lieu qui avait été choisi avant l'appel à la servlet
+                if(filtreLieu==null || filtreLieu.equals("")  || filtreLieu.equals("---"))
+                {
+                    filtreLieu="";
+                    request.setAttribute("lieuSelectionne", "---");
+                }
+                else
+                    request.setAttribute("lieuSelectionne", filtreLieu);
+                // On convertit la date au format date
+                Date sessionDate=null;
+                if(filtreDate!=null && !filtreDate.equals(""))
+                {
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    try {
+                        sessionDate = sdf.parse(filtreDate);
+                    } catch (ParseException ex) {
+                    }
+                }
+                request.setAttribute("filtreFormation", filtreFormation);
+                request.setAttribute("filtreDate", filtreDate);
+                // On fait appel au controleur de courseSession
+                DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
+                List<CourseSession> listeCourseSessions = DCSC.getCourseSessionFiltre(filtreFormation,sessionDate,filtreLieu);
+                request.setAttribute("listeCourseSessions", listeCourseSessions);
+                // On liste les lieux
+                DefaultLocationController DLC = new DefaultLocationController();
+                List<Location> listeLocations = DLC.getLocations();
+                request.setAttribute("listeLocations", listeLocations);
+                // Redirection vers la page jsp
+                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+                formationsRedirect.forward(request,response);      
         }
     }
 
@@ -63,7 +107,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                processRequest(request, response);
     }
 
     /**

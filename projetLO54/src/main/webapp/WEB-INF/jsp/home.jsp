@@ -27,52 +27,44 @@
 
               <div class="row">
                   <div class="col-lg-9 main-chart">
-                  
-                  	<div class="row mtbox">
-                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-                  			<div class="box1">
-					  			<span class="li_heart"></span>
-					  			<h3>933</h3>
-                  			</div>
-					  			<p>933 People liked your page the last 24hs. Whoohoo!</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_cloud"></span>
-					  			<h3>+48</h3>
-                  			</div>
-					  			<p>48 New files were added in your cloud storage.</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_stack"></span>
-					  			<h3>23</h3>
-                  			</div>
-					  			<p>You have 23 unread messages in your inbox.</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_news"></span>
-					  			<h3>+10</h3>
-                  			</div>
-					  			<p>More than 10 news were added in your reader.</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_data"></span>
-					  			<h3>OK!</h3>
-                  			</div>
-					  			<p>Your server is working perfectly. Relax & enjoy.</p>
-                  		</div>
-                  	
-                  	</div><!-- /row mt -->	
-                  
-                      
+                    
                       <div class="row mt">
-                                                             <div>
+                                    <div>
                                         <a href="/projetLO54/formations">Liste des formations disponibles</a><br/>
                                         <a href="/projetLO54/listCourseSessions">Liste des sessions disponibles</a>
                                     </div>
+                          
+                              <form action="/projetLO54/home" method="POST">
+            <table>
+                <tr>
+                    <td><input id="filtreFormation" name="filtreFormation" type="text" placeholder="Formation" value="${filtreFormation}"/></td>
+                    <td><input id="filtreDate" name="filtreDate" type="text" placeholder="JJ/MM/AAAA" value="${filtreDate}"/></td>
+                    <td>
+                        <select id="filtreLieu" name="filtreLieu">
+                            <option value="---">---</option>
+                           
+                            <c:forEach var="location" items="${requestScope.listeLocations}">
+                                <option value="${location.city}" ${location.city == lieuSelectionne ? 'selected="selected"' : ''}>${location.city}</option>
+                            </c:forEach>
+                        </select>
+                    </td>
+                    <td><input type="submit" value="Filtrer"/> </td>
+                </tr>
+
+            </table>
+        </form>
+        <ul>
+        <c:forEach var="courseSession" items="${requestScope.listeCourseSessions}">
+            <li><c:out value="${courseSession.id}"/>&nbsp;
+                <c:out value="${courseSession.course.title}"/>&nbsp;
+                <c:out value="${courseSession.location.city}"/>&nbsp;
+                <c:out value="${courseSession.startDate}"/>&nbsp;
+                <c:out value="${courseSession.endDate}"/>&nbsp;
+                <a href="/projetLO54/listCourseSessions?mode=inscription&courseSessionId=${courseSession.id}">Se préinscrire</a>
+            </li>
+            
+        </c:forEach>
+        </ul>
                       <!-- SERVER STATUS PANELS -->
                       	<div class="col-md-4 col-sm-4 mb">
  
