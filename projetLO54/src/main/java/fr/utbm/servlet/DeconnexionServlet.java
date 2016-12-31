@@ -1,8 +1,8 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package fr.utbm.servlet;
 
 import java.io.IOException;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Souf
  */
-public class ConnexionServlet extends HttpServlet {
-    
+public class DeconnexionServlet extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,38 +33,18 @@ public class ConnexionServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nom=request.getParameter("inputNom");
-            String prenom=request.getParameter("inputPrenom");
-            String adresse=request.getParameter("inputAdresse");
-            String numTel=request.getParameter("inputNumTel");
-            String email=request.getParameter("inputEmail");
-            //Si tous les champs sont remplis
-            if(nom!= null && !nom.isEmpty()
-                    && prenom!=null  && !nom.isEmpty()
-                    && adresse!= null  && !nom.isEmpty()
-                    && numTel!=null  && !nom.isEmpty()
-                    && email!=null)
-            {
-                /* Création ou récupération de la session */
-                HttpSession session = request.getSession();           
-                
-                /* Mise en session */
-                session.setAttribute("nom", nom);
-                session.setAttribute("prenom", prenom);
-                session.setAttribute("adresse", adresse);
-                session.setAttribute("numTel", numTel);
-                session.setAttribute("email", email);
-                RequestDispatcher redirect = request.getRequestDispatcher("/home");
+            /* On récupère la session */
+            HttpSession session = request.getSession();
+            /* Suppression de la session après déconnexion */
+                if (!session.isNew()) {
+                    session.invalidate();
+                    session = request.getSession();
+                } 
+                RequestDispatcher redirect = request.getRequestDispatcher("/connexion");
                 redirect.forward(request,response);
-            }
-            else
-            {
-                RequestDispatcher homeRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-                homeRedirect.forward(request,response);
-            }
         }
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -79,7 +59,7 @@ public class ConnexionServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -93,7 +73,7 @@ public class ConnexionServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     /**
      * Returns a short description of the servlet.
      *
@@ -103,5 +83,5 @@ public class ConnexionServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

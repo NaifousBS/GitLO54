@@ -40,7 +40,8 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            //Récupération des filtres
+                
+                //Récupération des filtres
                 String filtreFormation=request.getParameter("filtreFormation");
                 String filtreDate=request.getParameter("filtreDate");
                 String filtreLieu=request.getParameter("filtreLieu");
