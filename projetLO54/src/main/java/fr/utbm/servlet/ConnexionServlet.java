@@ -53,7 +53,7 @@ public class ConnexionServlet extends HttpServlet {
                 session.setAttribute("adresse", adresse);
                 session.setAttribute("numTel", numTel);
                 session.setAttribute("email", email);
-                RequestDispatcher redirect = request.getRequestDispatcher("/listCourseSessions");
+                RequestDispatcher redirect = request.getRequestDispatcher("/home");
                 redirect.forward(request,response);  
             }
             else

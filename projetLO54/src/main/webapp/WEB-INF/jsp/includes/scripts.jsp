@@ -22,9 +22,9 @@
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
-            title: 'Welcome to Dashgum!',
+            title: 'Bienvenue sur FORMACLUB!',
             // (string | mandatory) the text inside the notification
-            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+            text: 'Choisissez à présent votre cours grâce au filtre proposé et laissez vous guider.<br><br>Passez la souris sur ce message et cliquez sur la croix pour le faire disparaître.',
             // (string | optional) the image to display on the left
             image: 'resources/assets/img/ui-sam.jpg',
             // (bool | optional) if you want it to fade out on its own or just sit there

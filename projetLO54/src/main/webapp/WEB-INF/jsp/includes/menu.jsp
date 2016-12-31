@@ -4,10 +4,10 @@
       <!--header start-->
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Afficher/Masquer la barre latérale"></div>
               </div>
             <!--logo start-->
-            <a href="../home.jsp" class="logo"><b>FORMACLUB</b></a>
+            <a href="home" class="logo"><b>FORMACLUB</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -151,7 +151,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="connexion">Déconnexion</a></li>
             	</ul>
             </div>
         </header>
@@ -166,13 +166,13 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="resources/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <p class="centered"><a href="#"><img src="resources/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered"><c:out value="${sessionScope.prenom}"/> <c:out value="${sessionScope.nom}"/></h5>
               	  	
                   <li class="mt">
                       <a class="active" href="#">
                           <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                          <span>Tableau de bord</span>
                       </a>
                   </li>
 

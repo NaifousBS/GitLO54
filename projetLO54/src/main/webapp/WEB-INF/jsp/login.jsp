@@ -21,12 +21,8 @@
     <!-- Custom styles for this template -->
     <link href="resources/assets/css/style.css" rel="stylesheet">
     <link href="resources/assets/css/style-responsive.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
+  
   <body>
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -36,7 +32,7 @@
 		      <form class="form-login" action="/projetLO54/connexion" method="POST">
 		        <h2 class="form-login-heading">Formulaire</h2>
 		        <div class="login-wrap">
-		            <input id="inputNom" name="inputNom" type="text" class="form-control" placeholder="Nom" autofocus required pattern="[a-zA-Z -]">
+		            <input id="inputNom" name="inputNom" type="text" class="form-control" placeholder="Nom" autofocus required pattern="[a-zA-Z]{2,}">
 		            <br>
 		            <input id="inputPrenom" name="inputPrenom" type="text" class="form-control" placeholder="Prénom" required>
                             <br>
