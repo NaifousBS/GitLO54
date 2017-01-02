@@ -17,6 +17,7 @@
         <section id="container" >
             
             <jsp:include page="includes/menu.jsp" />
+            <jsp:include page="includes/sidebar.jsp" />
             
             <!-- **********************************************************************************************************************************************************
             MAIN CONTENT
