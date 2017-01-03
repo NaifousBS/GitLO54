@@ -21,17 +21,17 @@
                         <ul class="dropdown-menu extended tasks-bar">
                             <div class="notify-arrow notify-arrow-green"></div>
                             <li>
-                                <p class="green">You have 4 pending tasks</p>
+                                <p class="green">Avancement de vos cours</p>
                             </li>
                             <li>
                                 <a href="#">
                                     <div class="task-info">
-                                        <div class="desc">DashGum Admin Panel</div>
+                                        <div class="desc">LO51</div>
                                         <div class="percent">40%</div>
                                     </div>
                                     <div class="progress progress-striped">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
+                                            <span class="sr-only">40% Complété</span>
                                         </div>
                                     </div>
                                 </a>
@@ -39,12 +39,12 @@
                             <li>
                                 <a href="#">
                                     <div class="task-info">
-                                        <div class="desc">Database Update</div>
+                                        <div class="desc">LO54</div>
                                         <div class="percent">60%</div>
                                     </div>
                                     <div class="progress progress-striped">
                                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
+                                            <span class="sr-only">60% Complété</span>
                                         </div>
                                     </div>
                                 </a>
@@ -52,12 +52,12 @@
                             <li>
                                 <a href="#">
                                     <div class="task-info">
-                                        <div class="desc">Product Development</div>
+                                        <div class="desc">MG76</div>
                                         <div class="percent">80%</div>
                                     </div>
                                     <div class="progress progress-striped">
                                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete</span>
+                                            <span class="sr-only">80% Complété</span>
                                         </div>
                                     </div>
                                 </a>
@@ -65,18 +65,18 @@
                             <li>
                                 <a href="#">
                                     <div class="task-info">
-                                        <div class="desc">Payments Sent</div>
+                                        <div class="desc">AD50</div>
                                         <div class="percent">70%</div>
                                     </div>
                                     <div class="progress progress-striped">
                                         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                            <span class="sr-only">70% Complete (Important)</span>
+                                            <span class="sr-only">70% Complété</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="external">
-                                <a href="#">See All Tasks</a>
+                                <a href="#">Plus</a>
                             </li>
                         </ul>
                     </li>
@@ -90,17 +90,17 @@
                         <ul class="dropdown-menu extended inbox">
                             <div class="notify-arrow notify-arrow-green"></div>
                             <li>
-                                <p class="green">You have 5 new messages</p>
+                                <p class="green">Vous avez 5 nouveaux messages</p>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="photo"><img alt="avatar" src="resources/assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
-                                    <span class="time">Just now</span>
+                                    <span class="time">A l'instant</span>
                                     </span>
                                     <span class="message">
-                                        Hi mate, how is everything?
+                                        Salut, ça se passe bien?
                                     </span>
                                 </a>
                             </li>
@@ -109,10 +109,10 @@
                                     <span class="photo"><img alt="avatar" src="resources/assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
-                                    <span class="time">40 mins.</span>
+                                    <span class="time">40 min</span>
                                     </span>
                                     <span class="message">
-                                     Hi, I need your help with this.
+                                     Coucou, j'ai besoin d'aide stp.
                                     </span>
                                 </a>
                             </li>
@@ -121,10 +121,10 @@
                                     <span class="photo"><img alt="avatar" src="resources/assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
-                                    <span class="time">2 hrs.</span>
+                                    <span class="time">2h</span>
                                     </span>
                                     <span class="message">
-                                        Love your new Dashboard.
+                                        N'hésite pas à me contacter ;).
                                     </span>
                                 </a>
                             </li>
@@ -133,15 +133,15 @@
                                     <span class="photo"><img alt="avatar" src="resources/assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
-                                    <span class="time">4 hrs.</span>
+                                    <span class="time">4h</span>
                                     </span>
                                     <span class="message">
-                                        Please, answer asap.
+                                        Tu es inscrit dans quel cours ?
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">See all messages</a>
+                                <a href="#">Tous les messages</a>
                             </li>
                         </ul>
                     </li>

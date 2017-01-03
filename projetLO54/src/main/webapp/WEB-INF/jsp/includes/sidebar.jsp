@@ -20,12 +20,12 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
-                          <span>UI Elements</span>
+                          <span>Vos cours suivis</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="">LO54 : Java EE</a></li>
+                          <li><a  href="">AD50 : Aide à la décision</a></li>
+                          <li><a  href="">MG76 : Management</a></li>
                       </ul>
                   </li>
               </ul>
