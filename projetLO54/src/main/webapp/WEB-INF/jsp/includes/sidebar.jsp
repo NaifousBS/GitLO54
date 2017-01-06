@@ -23,9 +23,9 @@
                           <span>Vos cours suivis</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="">LO54 : Java EE</a></li>
-                          <li><a  href="">AD50 : Aide à la décision</a></li>
-                          <li><a  href="">MG76 : Management</a></li>
+                          <li><a  href="#">LO54 : Java EE</a></li>
+                          <li><a  href="#">AD50 : Aide à la décision</a></li>
+                          <li><a  href="#">MG76 : Management</a></li>
                       </ul>
                   </li>
               </ul>

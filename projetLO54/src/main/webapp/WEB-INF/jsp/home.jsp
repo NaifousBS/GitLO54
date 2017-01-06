@@ -57,37 +57,22 @@
                                             
                                         </table>
                                     </form>
-                                    <ul>
-                                        <c:forEach var="courseSession" items="${requestScope.listeCourseSessions}">
-                                            <li><c:out value="${courseSession.id}"/>&nbsp;
-                                                <c:out value="${courseSession.course.title}"/>&nbsp;
-                                                <c:out value="${courseSession.location.city}"/>&nbsp;
-                                                <c:out value="${courseSession.startDate}"/>&nbsp;
-                                                <c:out value="${courseSession.endDate}"/>&nbsp;
-                                                <a href="/projetLO54/inscription?mode=inscription&courseSessionId=${courseSession.id}">Se préinscrire</a>
-                                            </li>
-                                            
-                                        </c:forEach>
-                                    </ul>
                                 </div>
                                 
                                 <c:forEach var="courseSession" items="${requestScope.listeCourseSessions}">
                                 <div class="col-md-4 mb">
-                                    <!-- WHITE PANEL - TOP USER -->
                                     <div class="white-panel pn">
                                         <div class="white-header">
-                                            <h5>TOP USER</h5>
+                                            <h5><a href="/projetLO54/inscription?mode=inscription&courseSessionId=${courseSession.id}">Se préinscrire</a></h5>
                                         </div>
                                         <p><img src="resources/assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
                                         <p><b><c:out value="${courseSession.course.title}"/></b></p>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <p class="small mt"><c:out value="${courseSession.location.city}"/></p>
-                                                <p>2012</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <p class="small mt"><c:out value="${courseSession.startDate}"/></p>
-                                                <p>$ 47,60</p>
+                                                <p class="small mt">Le : <c:out value="${courseSession.startDate}"/></p>
                                             </div>
                                         </div>
                                     </div>
