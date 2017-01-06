@@ -61,12 +61,6 @@
         <servlet-name>ListCourseSessionsServlet</servlet-name>
         <url-pattern>/listCourseSessions</url-pattern>
     </servlet-mapping>
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <include-prelude>/WEB-INF/jsp/taglibs.jsp</include-prelude>
-        </jsp-property-group>
-    </jsp-config>
     <servlet-mapping>
         <servlet-name>SendMailServlet</servlet-name>
         <url-pattern>/send</url-pattern>
@@ -79,6 +73,13 @@
         <servlet-name>IndexServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/jsp/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+
     <session-config>
         <session-timeout>
             30
