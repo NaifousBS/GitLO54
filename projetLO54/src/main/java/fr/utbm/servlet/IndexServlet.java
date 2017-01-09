@@ -29,7 +29,7 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            // Redirection vers la servlet par défaut 
+            // Redirection vers la jsp par défaut 
                 RequestDispatcher indexRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
                 indexRedirect.forward(request,response);      
         }
