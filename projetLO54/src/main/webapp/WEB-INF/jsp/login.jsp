@@ -1,9 +1,3 @@
-<%-- 
-    Document   : hello
-    Created on : 3 déc. 2016, 18:45:02
-    Author     : Souf
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -15,12 +9,12 @@
     <meta name="author" content="Dashboard">
     <title>Connexion</title>
     <!-- Bootstrap core CSS -->
-    <link href="resources/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="resources/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/resources/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="resources/assets/css/style.css" rel="stylesheet">
-    <link href="resources/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/style-responsive.css" rel="stylesheet">
   </head>
   
   <body>
@@ -49,13 +43,13 @@
 	  	</div>
 	  </div>
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="resources/assets/js/jquery.js"></script>
-    <script src="resources/assets/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.min.js"></script>
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-    <script type="text/javascript" src="resources/assets/js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("resources/assets/img/login-bg.jpg", {speed: 500});
+        $.backstretch("${pageContext.request.contextPath}/resources/assets/img/login-bg.jpg", {speed: 500});
     </script>
   </body>
 </html>

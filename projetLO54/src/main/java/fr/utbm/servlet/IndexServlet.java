@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 // Servlet pour rediriger l'utilisateur vers l'index du site
-
 public class IndexServlet extends HttpServlet {
 
     /**
@@ -30,7 +29,7 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            // Redirection vers la page jsp par défaut
+            // Redirection vers la servlet par défaut 
                 RequestDispatcher indexRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
                 indexRedirect.forward(request,response);      
         }
