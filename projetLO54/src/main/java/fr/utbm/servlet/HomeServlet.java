@@ -1,8 +1,3 @@
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
 package fr.utbm.servlet;
 
 import fr.utbm.controller.DefaultClientController;
@@ -79,7 +74,7 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("listeLocations", listeLocations);
             // On récupère la liste des cours du client
             DefaultClientController DCC = new DefaultClientController();
-
+            
             // Redirection vers la page jsp
             RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
             formationsRedirect.forward(request,response);

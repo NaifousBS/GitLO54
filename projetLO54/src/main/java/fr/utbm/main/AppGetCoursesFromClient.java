@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.main;
 
 import fr.utbm.controller.DefaultCourseController;
@@ -10,11 +5,13 @@ import fr.utbm.javabeans.Course;
 import java.util.List;
 
 /**
+ * Fonction main qui récupère une liste de Courses d'un Client donné à partir de son adresse mail
+ * Ici il est compliqué de mettre cela en place car un id ou un mail peuvent correspondre à
+ * plusieurs clients et donc on va récupérer une liste de cours où il peut y avoir des doublons.
  *
- * @author Souf
  */
 public class AppGetCoursesFromClient {
-
+    
     /**
      * @param args the command line arguments
      */

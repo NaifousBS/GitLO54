@@ -4,27 +4,49 @@ import fr.utbm.dao.CourseDao;
 import fr.utbm.javabeans.Course;
 import java.util.List;
 
-// Service des cours
+// Service de Course
 public class CourseService {
-    // Enregistre un cours
+    
+    /**
+     * Enregistrement d'un Course
+     *
+     * @param newCourse
+     */
     public void registerCourse(Course newCourse)
     {
         CourseDao courseDao=new CourseDao();
         courseDao.save(newCourse);
     }
-    // Récupère une liste de tous les cours disponibles
+    
+    /**
+     * Récupération d'une liste de tous les Course
+     *
+     * @return
+     */
     public List<Course> getCourses()
     {
         CourseDao courseDao=new CourseDao();
         return courseDao.getCourses();
     }
-    // Récupère un cours à partir de son id
+    
+    /**
+     * Récupération d'un Course à partir de son courseId
+     *
+     * @param courseId
+     * @return
+     */
     public Course getCourse(String courseId)
     {
         CourseDao courseDao=new CourseDao();
         return courseDao.getCourse(courseId);
     }
-    // Récupère une liste de cours à partir de l'email du client
+    
+    /**
+     * Récupération d'une liste de Courses à partir de emailClient
+     *
+     * @param emailClient
+     * @return
+     */
     public List<Course> getCoursesFromClient(String emailClient){
         CourseDao CD = new CourseDao();
         List<Course> list = CD.getCoursesFromClient(emailClient);

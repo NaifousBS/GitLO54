@@ -6,9 +6,14 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+// DAO Client
 public class ClientDao {
     
-    // Méthode de création d'un nouveau client avec connexion à la base
+    /**
+     * Méthode de création d'un nouveau client avec connexion à la base
+     *
+     * @param newClient
+     */
     public void save(Client newClient){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -21,9 +26,13 @@ public class ClientDao {
             System.out.println("Erreur lors de la création du client!");
         }
     }
-
     
-    // Méthode qui récupère un client renseigné par son ID
+    /**
+     * Méthode qui récupère un client renseigné par son ID
+     *
+     * @param idClient
+     * @return
+     */
     public Client getClient(int idClient){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -32,7 +41,11 @@ public class ClientDao {
         return clientSelect;
     }
     
-    // Méthode qui récupère une liste de clients
+    /**
+     * Méthode qui récupère une liste de clients
+     *
+     * @return
+     */
     public List<Client> getClients(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

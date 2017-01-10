@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.servlet;
 
 import java.io.IOException;
@@ -13,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// Servlet pour rediriger l'utilisateur vers l'index du site
+// Servlet qui redirige l'utilisateur vers l'index du site
 public class IndexServlet extends HttpServlet {
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,12 +24,12 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            // Redirection vers la jsp par défaut 
-                RequestDispatcher indexRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-                indexRedirect.forward(request,response);      
+            // Redirection vers la jsp par défaut
+            RequestDispatcher indexRedirect = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+            indexRedirect.forward(request,response);
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -49,7 +44,7 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -63,7 +58,7 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     /**
      * Returns a short description of the servlet.
      *
@@ -73,5 +68,5 @@ public class IndexServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
 }

@@ -1,8 +1,3 @@
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
 package fr.utbm.servlet;
 
 import java.io.IOException;
@@ -15,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
- * @author Souf
+ * Servlet de connexion
  */
 public class ConnexionServlet extends HttpServlet {
     
@@ -46,7 +40,7 @@ public class ConnexionServlet extends HttpServlet {
                     && email!=null)
             {
                 /* Création ou récupération de la session */
-                HttpSession session = request.getSession();           
+                HttpSession session = request.getSession();
                 
                 /* Mise en session */
                 session.setAttribute("nom", nom);

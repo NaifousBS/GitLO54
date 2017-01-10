@@ -6,9 +6,14 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-// DAO des cours
+// DAO de Course
 public class CourseDao {
-    // Enregistre un cours dans la base de données
+    
+    /**
+     * Enregistre un cours dans la base de données
+     *
+     * @param newCourse
+     */
     public void save(Course newCourse){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -16,7 +21,13 @@ public class CourseDao {
         session.getTransaction().commit();
         session.close();
     }
-    // Récupère un cours à partir de son id
+    
+    /**
+     * Récupère un cours à partir de son id
+     *
+     * @param courseId
+     * @return
+     */
     public Course getCourse(String courseId){
         Session session=HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -25,7 +36,12 @@ public class CourseDao {
         session.close();
         return courseSelect;
     }
-    // Récupère la liste de tous les cours disponibles
+    
+    /**
+     * Récupère la liste de tous les cours disponibles
+     *
+     * @return
+     */
     public List<Course> getCourses(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -34,16 +50,22 @@ public class CourseDao {
         session.close();
         return list;
     }
-    // Récupère une liste des cours auxquels est inscrit un client à partir de son adresse mail
+    
+    /**
+     * Récupère une liste des cours auxquels est inscrit un client à partir de son adresse mail
+     *
+     * @param emailClient
+     * @return
+     */
     public List<Course> getCoursesFromClient(String emailClient){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Query query =  session.createQuery(
                 "SELECT cou.title "
-                + "FROM Client as cli "
-                + "inner join cli.courseSession as cs "
-                + "inner join cs.course as cou "
-                + "WHERE cli.email = :emailClient");
+                        + "FROM Client as cli "
+                        + "inner join cli.courseSession as cs "
+                        + "inner join cs.course as cou "
+                        + "WHERE cli.email = :emailClient");
         query.setParameter("emailClient", emailClient);
         List<Course> list = query.list();
         session.close();

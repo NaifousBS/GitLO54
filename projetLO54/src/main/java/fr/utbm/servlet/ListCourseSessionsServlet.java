@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.servlet;
 
 import fr.utbm.controller.DefaultCourseSessionController;
@@ -21,11 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author Souf
+ * Servlet de ListCourseSessions qui va permettre de filtrer les cours proposés
  */
 public class ListCourseSessionsServlet extends HttpServlet {
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,60 +32,60 @@ public class ListCourseSessionsServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         /*try (PrintWriter out = response.getWriter()) {
-            String mode=request.getParameter("mode");
-            
-            if(mode!=null && mode.equals("inscription"))
-            {
-                request.setAttribute("courseSessionId", request.getParameter("courseSessionId"));
-                request.removeAttribute("mode");
-                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/inscription");
-                formationsRedirect.forward(request,response);
-            }
-            else
-            {
-               //Récupération des filtres
-                String filtreFormation=request.getParameter("filtreFormation");
-                String filtreDate=request.getParameter("filtreDate");
-                String filtreLieu=request.getParameter("filtreLieu");
-                //Vérification des filtres + conversion
-                if(filtreFormation==null || filtreFormation.equals("") )
-                    filtreFormation="";
-                // On resélectionne le lieu qui avait été choisi avant l'appel à la servlet
-                if(filtreLieu==null || filtreLieu.equals("")  || filtreLieu.equals("---"))
-                {
-                    filtreLieu="";
-                    request.setAttribute("lieuSelectionne", "---");
-                }
-                else
-                    request.setAttribute("lieuSelectionne", filtreLieu);
-                // On convertit la date au format date
-                Date sessionDate=null;
-                if(filtreDate!=null && !filtreDate.equals(""))
-                {
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                    try {
-                        sessionDate = sdf.parse(filtreDate);
-                    } catch (ParseException ex) {
-                    }
-                }
-                request.setAttribute("filtreFormation", filtreFormation);
-                request.setAttribute("filtreDate", filtreDate);
-                // On fait appel au controleur de courseSession
-                DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
-                List<CourseSession> listeCourseSessions = DCSC.getCourseSessionFiltre(filtreFormation,sessionDate,filtreLieu);
-                request.setAttribute("listeCourseSessions", listeCourseSessions);
-                // On liste les lieux
-                DefaultLocationController DLC = new DefaultLocationController();
-                List<Location> listeLocations = DLC.getLocations();
-                request.setAttribute("listeLocations", listeLocations);
-                // Redirection vers la page jsp
-                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/listCourseSessions.jsp");
-                formationsRedirect.forward(request,response); 
-            }
-            
+        String mode=request.getParameter("mode");
+        
+        if(mode!=null && mode.equals("inscription"))
+        {
+        request.setAttribute("courseSessionId", request.getParameter("courseSessionId"));
+        request.removeAttribute("mode");
+        RequestDispatcher formationsRedirect = request.getRequestDispatcher("/inscription");
+        formationsRedirect.forward(request,response);
+        }
+        else
+        {
+        //Récupération des filtres
+        String filtreFormation=request.getParameter("filtreFormation");
+        String filtreDate=request.getParameter("filtreDate");
+        String filtreLieu=request.getParameter("filtreLieu");
+        //Vérification des filtres + conversion
+        if(filtreFormation==null || filtreFormation.equals("") )
+        filtreFormation="";
+        // On resélectionne le lieu qui avait été choisi avant l'appel à la servlet
+        if(filtreLieu==null || filtreLieu.equals("")  || filtreLieu.equals("---"))
+        {
+        filtreLieu="";
+        request.setAttribute("lieuSelectionne", "---");
+        }
+        else
+        request.setAttribute("lieuSelectionne", filtreLieu);
+        // On convertit la date au format date
+        Date sessionDate=null;
+        if(filtreDate!=null && !filtreDate.equals(""))
+        {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+        sessionDate = sdf.parse(filtreDate);
+        } catch (ParseException ex) {
+        }
+        }
+        request.setAttribute("filtreFormation", filtreFormation);
+        request.setAttribute("filtreDate", filtreDate);
+        // On fait appel au controleur de courseSession
+        DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
+        List<CourseSession> listeCourseSessions = DCSC.getCourseSessionFiltre(filtreFormation,sessionDate,filtreLieu);
+        request.setAttribute("listeCourseSessions", listeCourseSessions);
+        // On liste les lieux
+        DefaultLocationController DLC = new DefaultLocationController();
+        List<Location> listeLocations = DLC.getLocations();
+        request.setAttribute("listeLocations", listeLocations);
+        // Redirection vers la page jsp
+        RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/listCourseSessions.jsp");
+        formationsRedirect.forward(request,response);
+        }
+        
         }*/
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -109,7 +103,7 @@ public class ListCourseSessionsServlet extends HttpServlet {
         RequestDispatcher formationsRedirect = request.getRequestDispatcher("/inscription");
         formationsRedirect.forward(request,response);
     }
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -122,45 +116,45 @@ public class ListCourseSessionsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Récupération des filtres
-                String filtreFormation=request.getParameter("filtreFormation");
-                String filtreDate=request.getParameter("filtreDate");
-                String filtreLieu=request.getParameter("filtreLieu");
-                //Vérification des filtres + conversion
-                if(filtreFormation==null || filtreFormation.equals("") )
-                    filtreFormation="";
-                // On resélectionne le lieu qui avait été choisi avant l'appel à la servlet
-                if(filtreLieu==null || filtreLieu.equals("")  || filtreLieu.equals("---"))
-                {
-                    filtreLieu="";
-                    request.setAttribute("lieuSelectionne", "---");
-                }
-                else
-                    request.setAttribute("lieuSelectionne", filtreLieu);
-                // On convertit la date au format date
-                Date sessionDate=null;
-                if(filtreDate!=null && !filtreDate.equals(""))
-                {
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                    try {
-                        sessionDate = sdf.parse(filtreDate);
-                    } catch (ParseException ex) {
-                    }
-                }
-                request.setAttribute("filtreFormation", filtreFormation);
-                request.setAttribute("filtreDate", filtreDate);
-                // On fait appel au controleur de courseSession
-                DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
-                List<CourseSession> listeCourseSessions = DCSC.getCourseSessionFiltre(filtreFormation,sessionDate,filtreLieu);
-                request.setAttribute("listeCourseSessions", listeCourseSessions);
-                // On liste les lieux
-                DefaultLocationController DLC = new DefaultLocationController();
-                List<Location> listeLocations = DLC.getLocations();
-                request.setAttribute("listeLocations", listeLocations);
-                // Redirection vers la page jsp
-                RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-                formationsRedirect.forward(request,response); 
+        String filtreFormation=request.getParameter("filtreFormation");
+        String filtreDate=request.getParameter("filtreDate");
+        String filtreLieu=request.getParameter("filtreLieu");
+        //Vérification des filtres + conversion
+        if(filtreFormation==null || filtreFormation.equals("") )
+            filtreFormation="";
+        // On resélectionne le lieu qui avait été choisi avant l'appel à la servlet
+        if(filtreLieu==null || filtreLieu.equals("")  || filtreLieu.equals("---"))
+        {
+            filtreLieu="";
+            request.setAttribute("lieuSelectionne", "---");
+        }
+        else
+            request.setAttribute("lieuSelectionne", filtreLieu);
+        // On convertit la date au format date
+        Date sessionDate=null;
+        if(filtreDate!=null && !filtreDate.equals(""))
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                sessionDate = sdf.parse(filtreDate);
+            } catch (ParseException ex) {
+            }
+        }
+        request.setAttribute("filtreFormation", filtreFormation);
+        request.setAttribute("filtreDate", filtreDate);
+        // On fait appel au controleur de courseSession
+        DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
+        List<CourseSession> listeCourseSessions = DCSC.getCourseSessionFiltre(filtreFormation,sessionDate,filtreLieu);
+        request.setAttribute("listeCourseSessions", listeCourseSessions);
+        // On liste les lieux
+        DefaultLocationController DLC = new DefaultLocationController();
+        List<Location> listeLocations = DLC.getLocations();
+        request.setAttribute("listeLocations", listeLocations);
+        // Redirection vers la page jsp
+        RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+        formationsRedirect.forward(request,response);
     }
-
+    
     /**
      * Returns a short description of the servlet.
      *
@@ -170,5 +164,5 @@ public class ListCourseSessionsServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
 }

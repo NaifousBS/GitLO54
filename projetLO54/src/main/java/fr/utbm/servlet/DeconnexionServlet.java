@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.servlet;
 
 import java.io.IOException;
@@ -15,11 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
- * @author Souf
+ * Servlet de déconnexion
  */
 public class DeconnexionServlet extends HttpServlet {
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,15 +30,15 @@ public class DeconnexionServlet extends HttpServlet {
             /* On récupère la session */
             HttpSession session = request.getSession();
             /* Suppression de la session après déconnexion */
-                if (!session.isNew()) {
-                    session.invalidate();
-                    session = request.getSession();
-                } 
-                RequestDispatcher redirect = request.getRequestDispatcher("/connexion");
-                redirect.forward(request,response);
+            if (!session.isNew()) {
+                session.invalidate();
+                session = request.getSession();
+            }
+            RequestDispatcher redirect = request.getRequestDispatcher("/connexion");
+            redirect.forward(request,response);
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -59,7 +53,7 @@ public class DeconnexionServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -73,7 +67,7 @@ public class DeconnexionServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     /**
      * Returns a short description of the servlet.
      *
@@ -83,5 +77,5 @@ public class DeconnexionServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
 }

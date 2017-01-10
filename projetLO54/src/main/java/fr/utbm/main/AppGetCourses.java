@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.main;
 
 import fr.utbm.controller.DefaultCourseController;
@@ -10,16 +5,15 @@ import fr.utbm.javabeans.Course;
 import java.util.List;
 
 /**
- *
- * @author Ahmet
+ * Fonction main qui récupère une liste de Courses
  */
 public class AppGetCourses {
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         DefaultCourseController defCourseController=new DefaultCourseController();
         List<Course> listCourses= defCourseController.getCourses();
         for(int i=0; i<listCourses.size();i++)

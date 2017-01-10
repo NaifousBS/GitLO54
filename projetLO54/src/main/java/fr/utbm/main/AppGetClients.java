@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.utbm.main;
 
 import fr.utbm.controller.DefaultClientController;
@@ -11,10 +6,10 @@ import java.util.List;
 
 /**
  *
- * Récupère une liste de clients
+ * Fonction main qui récupère une liste de clients
  */
 public class AppGetClients {
-
+    
     /**
      * @param args the command line arguments
      */
@@ -26,7 +21,7 @@ public class AppGetClients {
         System.out.println("Liste de clients : ");
         for(Client client : clientsList){
             System.out.println("Id : " + client.getId() + " - Nom : " + client.getLastname()
-            + " - Email : " + client.getEmail());
+                    + " - Email : " + client.getEmail());
         }
     }
     
