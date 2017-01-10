@@ -38,7 +38,7 @@
                                         <h2><a href="/projetLO54/listCourseSessions">Liste des sessions disponibles</a></h2>
                                     </div>
                                     -->
-                                    <form action="/projetLO54/home" method="POST">
+                                    <form action="/projetLO54/home" method="POST" style="margin-bottom: 30px">
                                         <table>
                                             <tr>
                                                 <td><input id="filtreFormation" name="filtreFormation" type="text" placeholder="Formation" value="${filtreFormation}"/></td>
@@ -65,7 +65,7 @@
                                         <div class="white-header">
                                             <h5><a href="/projetLO54/inscription?mode=inscription&courseSessionId=${courseSession.id}">Se préinscrire</a></h5>
                                         </div>
-                                        <p><img src="resources/assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
+                                        <p><img src="resources/assets/img/computer.jpg" class="img-circle" width="80"></p>
                                         <p><b><c:out value="${courseSession.course.title}"/></b></p>
                                         <div class="row">
                                             <div class="col-md-6">

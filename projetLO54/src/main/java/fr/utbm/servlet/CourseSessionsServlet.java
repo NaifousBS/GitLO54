@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Souf
+ * Servlet qui va traiter les informations liées aux sessions de cours
  */
 public class CourseSessionsServlet extends HttpServlet {
 
@@ -35,9 +35,13 @@ public class CourseSessionsServlet extends HttpServlet {
             throws ServletException, IOException {  
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            // On instancie le contrôleur de CourseSession
             DefaultCourseSessionController DCSC = new DefaultCourseSessionController();
+            // On récupère la liste avec le paramètre "courseCode" puis on l'attribue à une liste listeCourseSessions
             List<CourseSession> listeCourseSessions = DCSC.getCourseSessions(request.getParameter("courseCode"));
+            // On attribue la variable "listeCourseSessions" à la liste listeCourseSessions pour qu'elle soit utilisable dans la jsp
             request.setAttribute("listeCourseSessions", listeCourseSessions);
+            // On redirige la requête et la réponse à la jsp correspondante
             RequestDispatcher formationsRedirect = request.getRequestDispatcher("/WEB-INF/jsp/courseSessions.jsp");
             formationsRedirect.forward(request,response);
         }
